@@ -1,23 +1,31 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import SingleNavigation from "./SingleNavigation"; // Ensure this component is correctly imported
-import MultiNavigation from "./MultiNavigation"; // Ensure this component is correctly imported
-import NavTitle from "./NavTitle"; // Ensure this component is correctly imported
+import SingleNavigation from "./SingleNavigation"; 
+import MultiNavigation from "./MultiNavigation"; 
+import NavTitle from "./NavTitle"; 
 
 function SideBarNavigationDropDown({ list, isOutClick, className, ...props }) {
   useEffect(() => console.log(isOutClick), [isOutClick]);
 
+  const renderNavItem = (item, index) => {
+    if (item.path) {
+      return <SingleNavigation key={item.id || index} info={item} />;
+    } else if (item.sub) {
+      return (
+        <MultiNavigation
+          isOutClick={isOutClick}
+          key={item.id || index}
+          info={item}
+        />
+      );
+    } else {
+      return <NavTitle key={item.id || index} text={item.text} />;
+    }
+  };
+
   return (
     <SideBarDropDownStyle className={className} {...props}>
-      {list.map((item, index) =>
-        item.path ? (
-          <SingleNavigation key={index} info={item} />
-        ) : item.sub ? (
-          <MultiNavigation isOutClick={isOutClick} key={index} info={item} />
-        ) : (
-          <NavTitle key={index} text={item.text} />
-        )
-      )}
+      {list.map(renderNavItem)}
     </SideBarDropDownStyle>
   );
 }

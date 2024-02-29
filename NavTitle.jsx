@@ -7,8 +7,7 @@ function NavTitle({ text, className }) {
 
 export default NavTitle;
 
-const StyledNavTitle = styled.div`
-  /* Add your styling here */
+const StyledNavTitle = styled.h2`
   color: #d6d6d6;
   font-size: 10px;
   text-transform: uppercase;

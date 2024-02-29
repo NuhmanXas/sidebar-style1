@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function SingleNavigation({ info, className }) {
-  const { text, path, icon } = info;
+  // Destructuring with defaults to handle missing info
+  const { text = "", path = "#", icon = null } = info || {};
 
   return (
     <StyledSingleNavigation className={className}>
@@ -23,11 +24,15 @@ const StyledSingleNavigation = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: inherit; // Set your color
-  }
+    color: inherit; // Set your color here
 
-  .text {
-    /* Additional styling for text if needed */
+    .icon {
+      /* Styling for the icon */
+    }
+
+    .text {
+      /* Additional styling for text */
+    }
   }
 
   &:hover {

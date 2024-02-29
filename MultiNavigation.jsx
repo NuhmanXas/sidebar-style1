@@ -16,7 +16,7 @@ function MultiNavigation({ info, isOutClick, className }) {
     if (isOutClick && isOpen) {
       setIsOpen(false);
     }
-  }, [isOutClick]);
+  }, [isOutClick, isOpen]);
 
   return (
     <MultiNavigationStyle
@@ -31,11 +31,11 @@ function MultiNavigation({ info, isOutClick, className }) {
         </span>
       </div>
       {isOpen &&
-        sub.map(({ text, path }, index) => (
+        sub.map(({ text, path, id }) => (
           <Link
-            key={index}
+            key={id || path}
             to={path}
-            className={`sub-item nav-link  ${
+            className={`sub-item nav-link ${
               currentPath === path ? "active" : ""
             }`}
           >
@@ -61,10 +61,6 @@ const MultiNavigationStyle = styled.div`
     display: block;
     padding-left: 15px;
     // Add more styles as needed
-  }
-
-  .active {
-    /* Styles for active navigation item */
   }
 
   .down-arrow {
