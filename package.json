@@ -1,0 +1,26 @@
+{
+  "name": "nmm-xas-app-sidebar-style1",
+  "version": "1.0.0",
+  "description": "`AppSideBar` is a React component designed for creating a responsive and interactive sidebar navigation in your application. It supports click-outside-to-close functionality and customizable width.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NuhmanXas/sidebar-style1.git"
+  },
+  "keywords": ["react", "sidebar", "navigation", "component"],
+  "author": "NMM.Nuhman",
+  "license": "ISC","peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "styled-components": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-icons": "^4.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/NuhmanXas/sidebar-style1/issues"
+  },
+  "homepage": "https://github.com/NuhmanXas/sidebar-style1#readme"
+}
